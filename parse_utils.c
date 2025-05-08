@@ -6,7 +6,7 @@
 /*   By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 10:11:56 by mdziadko          #+#    #+#             */
-/*   Updated: 2025/04/26 22:11:36 by mdziadko         ###   ########.fr       */
+/*   Updated: 2025/05/05 17:44:38 by mdziadko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static void	process_line(char *line, t_data *fdf, int fd)
 	else if (cur_width != fdf->map->width)
 	{
 		free(line);
-		exit_err(fdf, fd,  "Inconsistent row width");
+		exit_err(fdf, fd, "Inconsistent row width");
 	}
 	fdf->map->height++;
 }

@@ -6,7 +6,7 @@
 #    By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 07:37:02 by mdziadko          #+#    #+#              #
-#    Updated: 2025/05/04 23:21:18 by mdziadko         ###   ########.fr        #
+#    Updated: 2025/05/06 15:45:47 by mdziadko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,8 +54,8 @@ LIBS			= $(LIBFT_LIB) $(GNL_LIB) $(PRINTF_LIB) $(MLX_LIB)
 # 									FILES									   #
 # **************************************************************************** #
 
-SRCS		= main.c init.c map_parse.c parse_utils.c project.c \
-			draw.c colors.c render.c cleanup.c events.c
+SRCS		= main.c init.c map_parse.c parse_utils.c project.c rotation.c \
+			draw.c colors.c render.c cleanup.c events.c events_key.c
 OBJS		= $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 HEADERS		= fdf.h
 

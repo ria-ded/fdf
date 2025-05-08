@@ -6,7 +6,7 @@
 /*   By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 07:59:45 by mdziadko          #+#    #+#             */
-/*   Updated: 2025/05/04 15:52:41 by mdziadko         ###   ########.fr       */
+/*   Updated: 2025/05/05 17:44:03 by mdziadko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	t_data	*fdf;
-	
+
 	if (argc == 2)
 	{
 		fdf = fdf_init(argv[1]);

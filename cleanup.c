@@ -6,7 +6,7 @@
 /*   By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 10:16:03 by mdziadko          #+#    #+#             */
-/*   Updated: 2025/05/04 13:41:15 by mdziadko         ###   ########.fr       */
+/*   Updated: 2025/05/06 15:36:08 by mdziadko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	free_fdf(t_data *fdf)
 # ifdef __linux__
 	mlx_destroy_display(fdf->mlx);
 # endif
-	free(fdf->mlx); 
+	free(fdf->mlx);
 	free(fdf);
 }
 
@@ -68,7 +68,7 @@ void	clear_win(t_data *fdf, int color)
 	int	y;
 
 	y = 0;
-	while(y < HEIGHT)
+	while (y < HEIGHT)
 	{
 		x = 0;
 		while (x < WIDTH)

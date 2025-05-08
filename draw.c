@@ -6,7 +6,7 @@
 /*   By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 20:36:36 by mdziadko          #+#    #+#             */
-/*   Updated: 2025/05/04 23:20:50 by mdziadko         ###   ########.fr       */
+/*   Updated: 2025/05/07 22:03:57 by mdziadko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static void	draw_line_h(t_data *fdf, t_point p0, t_point p1, int dir)
 	err = 2 * dy - dx;
 	while (x <= p1.x_scr)
 	{
-		// pixel_put(fdf, x, y, p0.color);
 		pixel_put(fdf, x, y, gradient(x, y, p0, p1));
 		if (err >= 0)
 		{
@@ -74,6 +73,10 @@ void	draw_line(t_data *fdf, t_point p0, t_point p1)
 	int	dir;
 
 	dir = 1;
+	if (p0.color.trgb == -1)
+		p0.color.trgb = set_color(p0.z, fdf);
+	if (p1.color.trgb == -1)
+		p1.color.trgb = set_color(p1.z, fdf);
 	if (fabsf(p1.y_scr - p0.y_scr) < fabsf(p1.x_scr - p0.x_scr))
 	{
 		if (p0.x_scr > p1.x_scr)

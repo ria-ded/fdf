@@ -6,7 +6,7 @@
 #    By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 07:37:02 by mdziadko          #+#    #+#              #
-#    Updated: 2025/05/09 15:09:54 by mdziadko         ###   ########.fr        #
+#    Updated: 2025/05/09 19:59:53 by mdziadko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,15 +38,12 @@ endif
 
 # Directories
 LIBFT_DIR		= libft
-GNL_DIR			= gnl
-PRINTF_DIR		= printf
 LIBFT_LIB		= $(LIBFT_DIR)/libft.a
-PRINTF_LIB		= $(PRINTF_DIR)/libftprintf.a
 OBJ_DIR			= obj
 
 # Includes and Libraries
-INCLUDES		= -I. -I$(LIBFT_DIR) -I$(GNL_DIR) -I$(PRINTF_DIR) -I$(MLX_DIR)
-LIBS			= $(LIBFT_LIB) $(PRINTF_LIB) $(MLX_LIB)
+INCLUDES		= -I. -I$(LIBFT_DIR) -I$(MLX_DIR)
+LIBS			= $(LIBFT_LIB) $(MLX_LIB)
 
 # **************************************************************************** #
 # 									FILES									   #
@@ -61,13 +58,10 @@ HEADERS		= fdf.h
 # 									RULES									   #
 # **************************************************************************** #
 
-all: $(LIBFT_LIB) $(PRINTF_LIB) $(MLX_LIB) $(NAME) 
+all: $(LIBFT_LIB) $(MLX_LIB) $(NAME) 
 
 $(LIBFT_LIB):
 	$(MAKE) -C $(LIBFT_DIR)
-
-$(PRINTF_LIB):
-	$(MAKE) -C $(PRINTF_DIR)
 
 $(MLX_LIB):
 	$(MAKE) -C $(MLX_DIR)
@@ -82,13 +76,11 @@ $(OBJ_DIR)/%.o: %.c $(HEADERS)
 clean:
 	$(RM) -r $(OBJ_DIR)
 	$(MAKE) clean -C $(LIBFT_DIR)
-	$(MAKE) clean -C $(PRINTF_DIR)
 	$(MAKE) clean -C $(MLX_DIR) || true
 
 fclean: clean
 	$(RM) $(NAME)
 	$(MAKE) fclean -C $(LIBFT_DIR)
-	$(MAKE) fclean -C $(PRINTF_DIR)
 	$(MAKE) fclean -C $(MLX_DIR) || true
 
 re: fclean all

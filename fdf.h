@@ -6,7 +6,7 @@
 /*   By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 20:30:45 by mdziadko          #+#    #+#             */
-/*   Updated: 2025/05/09 19:51:18 by mdziadko         ###   ########.fr       */
+/*   Updated: 2025/05/09 20:00:38 by mdziadko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include "libft.h"
-# include "ft_printf.h"
 
 # define WIDTH 1400
 # define HEIGHT 920

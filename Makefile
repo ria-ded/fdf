@@ -6,7 +6,7 @@
 #    By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 07:37:02 by mdziadko          #+#    #+#              #
-#    Updated: 2025/05/06 15:45:47 by mdziadko         ###   ########.fr        #
+#    Updated: 2025/05/09 15:09:54 by mdziadko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,7 @@
 
 NAME		= fdf
 CC 			= cc
-#CFLAGS		= -g
-CFLAGS		= -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS		= -Wall -Wextra -Werror -g3 #-fsanitize=address
 AR			= ar rcs
 RM			= rm -f
 
@@ -42,13 +41,12 @@ LIBFT_DIR		= libft
 GNL_DIR			= gnl
 PRINTF_DIR		= printf
 LIBFT_LIB		= $(LIBFT_DIR)/libft.a
-GNL_LIB			= $(GNL_DIR)/libgnl.a
 PRINTF_LIB		= $(PRINTF_DIR)/libftprintf.a
 OBJ_DIR			= obj
 
 # Includes and Libraries
 INCLUDES		= -I. -I$(LIBFT_DIR) -I$(GNL_DIR) -I$(PRINTF_DIR) -I$(MLX_DIR)
-LIBS			= $(LIBFT_LIB) $(GNL_LIB) $(PRINTF_LIB) $(MLX_LIB)
+LIBS			= $(LIBFT_LIB) $(PRINTF_LIB) $(MLX_LIB)
 
 # **************************************************************************** #
 # 									FILES									   #
@@ -63,13 +61,10 @@ HEADERS		= fdf.h
 # 									RULES									   #
 # **************************************************************************** #
 
-all: $(LIBFT_LIB) $(GNL_LIB) $(PRINTF_LIB) $(MLX_LIB) $(NAME) 
+all: $(LIBFT_LIB) $(PRINTF_LIB) $(MLX_LIB) $(NAME) 
 
 $(LIBFT_LIB):
 	$(MAKE) -C $(LIBFT_DIR)
-
-$(GNL_LIB):
-	$(MAKE) -C $(GNL_DIR)
 
 $(PRINTF_LIB):
 	$(MAKE) -C $(PRINTF_DIR)
@@ -87,14 +82,12 @@ $(OBJ_DIR)/%.o: %.c $(HEADERS)
 clean:
 	$(RM) -r $(OBJ_DIR)
 	$(MAKE) clean -C $(LIBFT_DIR)
-	$(MAKE) clean -C $(GNL_DIR)
 	$(MAKE) clean -C $(PRINTF_DIR)
 	$(MAKE) clean -C $(MLX_DIR) || true
 
 fclean: clean
 	$(RM) $(NAME)
 	$(MAKE) fclean -C $(LIBFT_DIR)
-	$(MAKE) fclean -C $(GNL_DIR)
 	$(MAKE) fclean -C $(PRINTF_DIR)
 	$(MAKE) fclean -C $(MLX_DIR) || true
 

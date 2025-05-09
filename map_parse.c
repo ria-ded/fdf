@@ -6,7 +6,7 @@
 /*   By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 21:05:41 by mdziadko          #+#    #+#             */
-/*   Updated: 2025/05/07 22:06:15 by mdziadko         ###   ########.fr       */
+/*   Updated: 2025/05/09 19:19:30 by mdziadko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ static void	parse_map(t_data *fdf, int fd)
 		free(trim);
 		y++;
 	}
+	free(get_next_line(fd));
 }
 
 void	parse_file(t_data *fdf, char *file)

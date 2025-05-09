@@ -6,7 +6,7 @@
 /*   By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 19:40:08 by mdziadko          #+#    #+#             */
-/*   Updated: 2025/05/06 15:41:21 by mdziadko         ###   ########.fr       */
+/*   Updated: 2025/05/09 19:44:33 by mdziadko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	handle_key(int keycode, t_data *fdf)
 
 void	handle_events(t_data *fdf)
 {
-	mlx_hook(fdf->win, 2, 0, handle_key, fdf);
+	mlx_hook(fdf->win, 2, 1L << 0, handle_key, fdf);
 	mlx_hook(fdf->win, 6, 1L << 6, mouse_move, fdf);
 	mlx_mouse_hook(fdf->win, mouse_zoom, fdf);
 	mlx_hook(fdf->win, 17, 0, exit_program, fdf);

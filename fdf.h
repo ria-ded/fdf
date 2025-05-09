@@ -6,7 +6,7 @@
 /*   By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 20:30:45 by mdziadko          #+#    #+#             */
-/*   Updated: 2025/05/07 21:31:48 by mdziadko         ###   ########.fr       */
+/*   Updated: 2025/05/09 19:51:18 by mdziadko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,16 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include "libft.h"
-# include "get_next_line.h"
 # include "ft_printf.h"
 
 # define WIDTH 1400
 # define HEIGHT 920
 # define SCALE 0.7f
 # define ISO_ANGLE 0.523599
+
+# ifndef M_PI
+#  define M_PI 3.14159265358979323846
+# endif
 
 # define BLACK 0x00000000
 # define WHITE 0x00FFFFFF
@@ -44,10 +47,10 @@
 #  define KEY_RIGHT 65363
 #  define KEY_DOWN 65364
 #  define KEY_UP 65362
-#  define KEY_X 45
-#  define KEY_Y 21
+#  define KEY_X 120
+#  define KEY_Y 121
 #  define KEY_Z 122
-#  define KEY_R 27
+#  define KEY_R 114
 #  define KEY_C 99
 #  define ISO 49
 #  define ORTHO 50

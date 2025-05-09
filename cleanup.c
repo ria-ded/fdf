@@ -6,7 +6,7 @@
 /*   By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 10:16:03 by mdziadko          #+#    #+#             */
-/*   Updated: 2025/05/06 15:36:08 by mdziadko         ###   ########.fr       */
+/*   Updated: 2025/05/08 19:07:07 by mdziadko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,7 @@ void	free_fdf(t_data *fdf)
 		mlx_destroy_window(fdf->mlx, fdf->win);
 	if (fdf->map)
 		free_map(fdf->map);
-# ifdef __linux__
 	mlx_destroy_display(fdf->mlx);
-# endif
 	free(fdf->mlx);
 	free(fdf);
 }

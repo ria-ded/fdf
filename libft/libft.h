@@ -6,7 +6,7 @@
 /*   By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 20:27:55 by mdziadko          #+#    #+#             */
-/*   Updated: 2025/05/09 18:01:13 by mdziadko         ###   ########.fr       */
+/*   Updated: 2025/05/09 20:04:57 by mdziadko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 // GET NEXT LINE
 
-int			read_and_store(int fd, char **remainder);
-void		extract_line(char **remainder, char **line);
-char		*get_next_line(int fd);
+int		read_and_store(int fd, char **remainder);
+void	extract_line(char **remainder, char **line);
+char	*get_next_line(int fd);
 
 #endif

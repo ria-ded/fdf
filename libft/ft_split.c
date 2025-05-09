@@ -6,7 +6,7 @@
 /*   By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 20:30:30 by mdziadko          #+#    #+#             */
-/*   Updated: 2025/04/23 20:09:16 by mdziadko         ###   ########.fr       */
+/*   Updated: 2025/05/09 20:05:18 by mdziadko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ char	**ft_split(char const *s, char c)
 	int		size;
 
 	if (!s)
-		return (NULL);	
+		return (NULL);
 	size = token_count(s, c);
 	res = malloc((size + 1) * sizeof(char *));
 	if (!res)

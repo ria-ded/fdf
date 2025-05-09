@@ -6,7 +6,7 @@
 /*   By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 20:27:55 by mdziadko          #+#    #+#             */
-/*   Updated: 2025/04/22 23:07:35 by mdziadko         ###   ########.fr       */
+/*   Updated: 2025/05/09 18:01:13 by mdziadko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
-// List structure
+# ifndef BUFFER_SIZE 
+#  define BUFFER_SIZE 5
+# endif
 
 typedef struct s_list
 {
@@ -24,7 +27,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-// Check
+// CHECK CHAR
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -33,7 +36,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_isspace(char c);
 
-// Memory
+// MEMORY MANAGEMENT
 
 void	*ft_memset(void *s, int c, size_t nbytes);
 void	ft_bzero(void *s, size_t n);
@@ -43,7 +46,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 
-// String
+// STRING MANAGEMENT
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
@@ -66,14 +69,14 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
-// Print
+// PRINT
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-// List
+// LIST MANAGEMENT
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -84,5 +87,11 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// GET NEXT LINE
+
+int			read_and_store(int fd, char **remainder);
+void		extract_line(char **remainder, char **line);
+char		*get_next_line(int fd);
 
 #endif

@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdziadko <mdziadko@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/13 23:08:47 by mdziadko          #+#    #+#             */
-/*   Updated: 2025/05/09 18:07:11 by mdziadko         ###   ########.fr       */
+/*   Created: 2024/12/18 16:22:20 by mdziadko          #+#    #+#             */
+/*   Updated: 2024/12/23 10:58:09 by mdziadko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-	The strdup() function allocates sufficient memory for a copy of the string 
-	s1, does the copy, and returns a pointer to it. The pointer may subsequently
-	be used as an argument to the function free(3).
+	Counts the number of nodes in a list.
 */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+int	ft_lstsize(t_list *lst)
 {
-	char	*dst;
 	int		i;
+	t_list	*current;
 
-	dst = malloc((ft_strlen(src) + 1));
-	if (!dst)
-		return (NULL);
 	i = 0;
-	while (src[i])
+	current = lst;
+	while (current)
 	{
-		dst[i] = src[i];
 		i++;
+		current = current->next;
 	}
-	dst[i] = '\0';
-	return (dst);
+	return (i);
 }

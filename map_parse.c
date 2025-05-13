@@ -90,6 +90,9 @@ void	parse_file(t_data *fdf, char *file)
 	int	fd;
 
 	fdf->map = safe_malloc(sizeof(t_map), fdf, -1);
+	fdf->map->height = 0;
+	fdf->map->width = 0;
+	fdf->map->grid = NULL;
 	get_map_size(file, fdf);
 	fd = open(file, O_RDONLY);
 	if (fd < 0)

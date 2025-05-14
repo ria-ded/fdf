@@ -93,6 +93,7 @@ void	get_map_size(char *file, t_data *fdf)
 		exit_err(fdf, -1, "Could not open file");
 	fdf->map->height = 0;
 	fdf->map->width = 0;
+	fdf->map->grid = NULL;
 	line = get_next_line(fd);
 	while (line)
 	{
